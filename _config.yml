@@ -3,13 +3,14 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Cheng Jun's Blog
 subtitle: ''
 description: '这个是我人生中第一次的blog，我希望我可以用这个blog记录很多东西！！！'
 keywords:
 author: Cheng Jun
 language: en
 timezone: ''
+root: /
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -41,7 +42,7 @@ external_link:
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
-relative_link: false
+relative_link: True
 future: true
 syntax_highlighter: highlight.js
 highlight:
