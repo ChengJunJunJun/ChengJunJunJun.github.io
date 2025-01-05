@@ -1,3 +1,8 @@
+@use 'sass:color';
+@use 'animation';
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600");
+
 $backgroundColor: #ffffff !default;
 $foregroundColor: #2e405b !default;
 $fontList: "Source Sans Pro", "Roboto", "Helvetica", "Helvetica Neue",
@@ -7,8 +12,6 @@ $titleFontList: "HiraMinProN-W6", "Source Han Serif CN", "Source Han Serif SC",
   "Source Han Serif TC", serif !default;
 $verticalPrimaryPaddingTopPatch: 0;
 $verticalSecondaryPaddingTopPatch: 1px;
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600");
-@import "animation";
 
 html,
 body,
@@ -72,7 +75,7 @@ body {
   font-size: 18px;
   line-height: 1.5em;
 
-  @if lightness($backgroundColor) >50 {
+  @if color.channel($backgroundColor, "lightness", $space: hsl) > 50 {
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
   } @else {
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi/P//Py8DpQCXISBxJlING4QaGEdDiQgAEGAAg8sST3LGZYoAAAAASUVORK5CYII=");
@@ -267,7 +270,7 @@ a {
   }
 
   &:focus {
-    color: darken($foregroundColor, 30%);
+    color: color.adjust($foregroundColor, $lightness: -30%);
   }
 }
 
@@ -309,10 +312,10 @@ a {
     border-bottom: solid transparent 2px;
 
     &:hover {
-      @if lightness($foregroundColor) >50 {
-        color: darken($foregroundColor, 10%) !important;
+      @if color.channel($foregroundColor, "lightness", $space: hsl) > 50 {
+        color: color.adjust($foregroundColor, $lightness: -10%) !important;
       } @else {
-        color: lighten($foregroundColor, 10%) !important;
+        color: color.adjust($foregroundColor, $lightness: 10%) !important;
       }
 
       background-color: transparent !important;
@@ -321,10 +324,10 @@ a {
     }
 
     &:focus {
-      @if lightness($foregroundColor) >50 {
-        color: darken($foregroundColor, 10%) !important;
+      @if color.channel($foregroundColor, "lightness", $space: hsl) > 50 {
+        color: color.adjust($foregroundColor, $lightness: -10%) !important;
       } @else {
-        color: lighten($foregroundColor, 10%) !important;
+        color: color.adjust($foregroundColor, $lightness: 10%) !important;
       }
     }
   }
