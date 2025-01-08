@@ -1,7 +1,11 @@
 ---
 title: 博客搭建指南
 date: 2025-01-04
+last_modified: 2025-01-04
+author: Cheng Jun
 desc: 2025年终于找到了自己喜欢的博客主题，开始写一些技术博客了！
+tags: [Hexo, GitHub, Blog]
+categories: Technical sharing
 ---
 
 #### 一点点前提

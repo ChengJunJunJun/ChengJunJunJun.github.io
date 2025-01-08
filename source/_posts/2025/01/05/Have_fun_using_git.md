@@ -1,7 +1,11 @@
 ---
 title: Git使用指南
 date: 2025-01-05
+last_modified: 2025-01-05
+author: Cheng Jun
 desc: git不只是git clone和git push，下面是我使用git上传到github的一些经验。
+tags: [Git, GitHub]
+categories: Technical sharing
 ---
 
 #### 当你需要和别人的代码协作的时候

@@ -32,6 +32,11 @@ mixin make_post(item, is_detail)
                             a.a-tag(href=config.root + item.path, title= item.name)= item.name
                             span &nbsp;
                             - });
+            if item.last_modified
+                span.date.meta-item
+                    i.fa.fa-clock-o
+                    span &nbsp;
+                    !=__("Last_modified")+"&nbsp;" + date(item.last_modified, 'YYYY-MM-DD')
         if is_detail
             p.post-abstract!= item.content
         else
