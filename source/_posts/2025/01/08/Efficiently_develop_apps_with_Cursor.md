@@ -1,7 +1,7 @@
 ---
 title: 使用Cursor高效开发Apple应用
 date: 2025-01-08
-last_modified: 2025-01-08
+last_modified: 2025-01-09
 author: Cheng Jun
 desc: 作为一个ios开发者新手，Xcode是入门开发者的绊脚石，Cursor作为AI编程助手，可以大大提高开发效率。帮助大家体会到开发Apple应用的乐趣。
 tags: [Cursor, Apple, iOS, Swift]
@@ -10,7 +10,7 @@ categories: Technical sharing
 
 #### 在Cursor中配置Apple开发环境
 ##### 1，安装Swift、CodeLLDB，SweetPad插件
--插件的作用可以参考相应的插件介绍，也可以使用ChatGPT来了解。
+- 插件的作用可以参考相应的插件介绍，也可以使用ChatGPT来了解。
 
 ##### 2，配置 Swift LSP 能够正确识别项目中的代码
 经过上面的步骤，如果你发现编辑器还是报错，很多地方提示：`Cannot find '***' in scope SourceKit`。这是因为 `swift` 的 `sourcekit-lsp` 没有把你的项目文件加入到索引中，所以编辑器找不到你的方法。可以通过下面的方法解决这个问题：
@@ -90,13 +90,7 @@ Xcode 和 Cursor/VSCode 的文件组织方式存在差异：
 > 注意：转换后的文件夹结构将在文件系统中实际存在，便于两个 IDE 之间的同步。
 
 ##### 3. 热重载故障排除
-当遇到热重载失败时，可能的原因和解决方案：
-
-| 问题原因 | 解决方法 |
-|---------|---------|
-| CoreData 变更 | 重启 InjectionIII |
-| Packages 更新 | 清理构建并重新运行 |
-| 文件结构变动 | 重新执行 `Prepare Project` |
+当遇到热重载失败时，可能会遇到几种常见问题：如果是 CoreData 发生变更，需要重启 InjectionIII；当 Packages 有更新时，需要清理构建并重新运行项目；如果项目的文件结构发生变动，则需要重新执行 `Prepare Project` 命令来更新配置。
 
 #### 总结
 通过以上的设置，就可以开心在Cursor中开发Apple应用了。本blog主要参考的是[JUNPING](https://blog.imjp.uk/fxxk-xcode)，感谢[原作者](https://blog.imjp.uk/)的分享。
